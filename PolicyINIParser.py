@@ -4,6 +4,17 @@ import re
 import pprint
 
 #Define Global Variables & Inspection Thresholds
+policyModel = {
+    #!!!!note all strings are lowercase!!!!
+    'PolicyID' : 'Measured Values',
+    'policytype' : 'regular',
+    'interval' : '1440',
+    'immediateinterval' : '5',
+    'allowedsafes' : '.*',
+    'searchforusages' : 'yes',
+    'maximumretries' : '5',
+    'mindelaybetweenretries' : '90'
+}
 iniIndexDict =  dict()
 tInterval = 1440
 tImmediateInterval = 15
@@ -30,6 +41,7 @@ def readINI(file, fullpath):
 
 def parseLine(line):
     print('parsing ' + line)
+    line = line.lower()
     sLine = line.split('=')
     key = sLine[0]
     if len(sLine) == 1:
@@ -44,12 +56,17 @@ def parseLine(line):
         value = sLine[1].strip(' \t')
     
     return [key, value]
- 
+
+def analyzeINI(setting, threshold,matchType):
+    if matchType is '=':
+        for pol in iniIndexDict:
+            iniIndexDict[pol][setting]
 
 
 def main():
     
     #initialize main func variables
+    #iniIndexDict.
 
     #get inputs
     print('Input directory of CPM policy ini files.  Example: "Q:\HealthCheck\EPAM1-PrivateArkFiles\EPAM1-PrivateArkFiles\PasswordManagerShared\Policies"')
@@ -60,7 +77,7 @@ def main():
     if iniDir[-1] != '\\':
         iniDir + '\\\\'
 
-    #Begin analyzing ini files
+    #build dictionary of all policy inis
     for file in os.listdir(iniDir):
         if file.endswith(".ini"):        
             fullPath = os.fspath(iniDir + '\\' + file)
