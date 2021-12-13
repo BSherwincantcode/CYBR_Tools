@@ -7,3 +7,5 @@ PlatformsPerCPM: This provides a string that can be used for the "PlatformsToMan
       Call .bat file to update the value in the CPM.ini automagically.
       
       Test with mutliple CPMs and larger dataset.
+      
+      Integrate CP/CCP with workflow
