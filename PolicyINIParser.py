@@ -69,9 +69,9 @@ def main():
     #iniIndexDict.
 
     #get inputs
-    print('Input directory of CPM policy ini files.  Example: "Q:\HealthCheck\EPAM1-PrivateArkFiles\EPAM1-PrivateArkFiles\PasswordManagerShared\Policies"')
-    #iniDir = input('"Q:\\HealthCheck\\EPAM1-PrivateArkFiles\\EPAM1-PrivateArkFiles\\PasswordManagerShared\\Policies"')
-    iniDir = "Q:\\HealthCheck\\EPAM1-PrivateArkFiles\\EPAM1-PrivateArkFiles\\PasswordManagerShared\\Policies\\pyTest"
+    print('Input directory of CPM policy ini files.  Example: "Q:\HealthCheck\VAULT1-PrivateArkFiles\VAULT1-PrivateArkFiles\PasswordManagerShared\Policies"')
+    #iniDir = input('"Q:\\HealthCheck\\VAULT1-PrivateArkFiles\\VAULT1-PrivateArkFiles\\PasswordManagerShared\\Policies"')
+    iniDir = "Q:\\HealthCheck\\VAULT1-PrivateArkFiles\\VAULT1-PrivateArkFiles\\PasswordManagerShared\\Policies\\pyTest"
 
     #add a backslash to the tail of the path if it's not there
     if iniDir[-1] != '\\':
